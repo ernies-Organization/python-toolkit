@@ -1,37 +1,125 @@
 # python-toolkit
 a toolkit of useful python scripts
 
-# important 
-you are able to edit and use this in your code without consent from me (as long as you are not useing it for illegal/inappropriate things)
-this is licenced under the [MIT licence](https://github.com/ernies-Organization/python-toolkit/blob/main/LICENSE)
+# important
+you are able to edit and use this in your code without consent from me  
+(as long as you are not using it for illegal/inappropriate things)
+
+this is licensed under the [MIT licence](https://github.com/ernies-Organization/python-toolkit/blob/main/LICENSE
+)
 
 # projects
 below are all the projects and instructions for them
 
+---
+
 ## leaderboard from file
-this is a leaderboard that allows you to save a leaderboard to a file, display it and edit it
+this is a leaderboard that allows you to:
+- save a leaderboard to a file  
+- load it  
+- update the highest score for each player  
+- print it in sorted order  
 
-project file -> [leaderboard-from-file.py](https://github.com/ernies-Organization/python-toolkit/blob/main/leaderboard-from-file.py)
+project file →  [leaderboard-from-file.py](https://github.com/ernies-Organization/python-toolkit/blob/main/leaderboard-from-file.py
+)
 
-at the top you need to have: 
-```
+### setup
+at the top of your script you need:
+
+```python
 import json
 ```
-in a place for editable varibles have:
 
-```
-LEADERBOARD_PATH = "leaderboard.json" # File name for the leaderboard (has to have ".json" at the end)
-leaderboard_lenth = 10 # lenth of leader board displayed
+inside your editable variables section:
+
+```python
+LEADERBOARD_PATH = "leaderboard.json"  # File name for the leaderboard (must end in .json)
+leaderboard_lenth = 10                # number of scores displayed
 ```
 
-add a resolt to the leaderboard in the code with:
+### add a score to the leaderboard
+```python
+record_result(name, rounds)
 ```
-record_result(name, rounds) 
-```
-show the curent leaderboard with:
+- `name` → the player's name  
+- `rounds` → the score (must be above 0)
 
-```
+### print the leaderboard
+```python
 print_leaderboard()
 ```
 
+---
 
+## user database from file
+this is a full user account system that allows you to:
+- create accounts  
+- login  
+- logout  
+- delete accounts  
+- change username  
+- change password  
+- and includes a full admin panel with extra tools  
+
+project file →  [user-database-from-file.py
+](https://github.com/ernies-Organization/python-toolkit/blob/main/user-database-from-file.py
+)
+### setup
+at the top of your script include:
+
+```python
+import json
+```
+
+then set the database file:
+
+```python
+USER_DATABASE_PATH = "user_database.json"  # where all user data is saved
+```
+
+### start the system
+call this to start the login script:
+
+```python
+user_login()
+```
+
+this will:
+- load the user database  
+- create the first admin account if none exists  
+- start the login/signup system  
+
+### features
+
+#### normal user features
+- change username  
+- change password  
+- delete account  
+- logout  
+
+#### admin features
+- view all users  
+- delete any user (except last admin)  
+- promote/demote users  
+- reset passwords  
+- rename users  
+- create new users  
+- view user details  
+
+### database format
+the JSON file stores data like:
+
+```json
+[
+    {
+        "username": "example",
+        "password": "examplepassword",
+        "admin": false
+    }
+]
+```
+
+you don't need to manage the file manually —  
+all saving and loading is done automatically.
+
+---
