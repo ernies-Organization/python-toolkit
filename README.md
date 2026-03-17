@@ -58,6 +58,7 @@ record_result(name, rounds)
 print_leaderboard()
 ```
 
+[↑ back to top](#projects)
 ---
 
 ## user database from file
@@ -129,6 +130,8 @@ the JSON file stores data like:
 you don't need to manage the file manually —  
 all saving and loading is done automatically.
 
+[↑ back to top](#projects)
+
 ---
 
 ## password generator
@@ -158,6 +161,8 @@ Password length: 16
 Your password is: mK$9vR!zLp#2Xw&Q
 Password strength: Very Strong (score: 10)
 ```
+
+[↑ back to top](#projects)
 
 ---
 
@@ -199,6 +204,8 @@ strength, score = check_password_strength("Example123!")
 print(strength, score)
 # Strong 7
 ```
+
+[↑ back to top](#projects)
 
 ---
 
