@@ -1,3 +1,4 @@
+
 # python-toolkit
 a toolkit of useful python scripts
 
@@ -5,11 +6,20 @@ a toolkit of useful python scripts
 you are able to edit and use this in your code without consent from me  
 (as long as you are not using it for illegal/inappropriate things)
 
-this is licensed under the [MIT licence](https://github.com/ernies-Organization/python-toolkit/blob/main/LICENSE
-)
+this is licensed under the [MIT licence](https://github.com/ernies-Organization/python-toolkit/blob/main/LICENSE)
 
 # projects
 below are all the projects and instructions for them
+
+<details>
+  <summary><strong>all projects</strong></summary>
+
+- <a href="#leaderboard-from-file">leaderboard from file</a>  
+- <a href="#user-database-from-file">user database from file</a>  
+- <a href="#password-generator">password generator</a>  
+- <a href="#password-strength-checker">password strength checker</a>
+
+</details>
 
 ---
 
@@ -20,8 +30,7 @@ this is a leaderboard that allows you to:
 - update the highest score for each player  
 - print it in sorted order  
 
-project file →  [leaderboard-from-file.py](https://github.com/ernies-Organization/python-toolkit/blob/main/leaderboard-from-file.py
-)
+project file →  [leaderboard-from-file.py](https://github.com/ernies-Organization/python-toolkit/blob/main/leaderboard-from-file.py)
 
 ### setup
 at the top of your script you need:
@@ -61,9 +70,7 @@ this is a full user account system that allows you to:
 - change password  
 - and includes a full admin panel with extra tools  
 
-project file →  [user-database-from-file.py
-](https://github.com/ernies-Organization/python-toolkit/blob/main/user-database-from-file.py
-)
+project file →  [user-database-from-file.py](https://github.com/ernies-Organization/python-toolkit/blob/main/user-database-from-file.py)
 ### setup
 at the top of your script include:
 
@@ -123,3 +130,75 @@ you don't need to manage the file manually —
 all saving and loading is done automatically.
 
 ---
+
+## password generator
+this script creates a **secure random password** using python’s `secrets` module, and asks you which character groups you want to include.
+
+project file →  
+[password_generater.py](https://github.com/ernies-Organization/python-toolkit/blob/main/password_generater.py)
+
+### features
+- choose lowercase, uppercase, digits, symbols  
+- must include at least one group  
+- ensures **at least one character from each selected group**  
+- uses secure randomness (`secrets.choice`)  
+- fully shuffled output  
+- automatically checks strength afterwards
+
+### use
+run the script and answer the prompts:
+
+```
+Include lowercase letters? (y/n): y
+Include uppercase letters? (y/n): y
+Include digits? (y/n): y
+Include symbols? (y/n): y
+Password length: 16
+
+Your password is: mK$9vR!zLp#2Xw&Q
+Password strength: Very Strong (score: 10)
+```
+
+---
+
+## password strength checker
+this script analyses any password and gives it a strength rating + score.
+
+project file →  
+[password_strength_checker.py](https://github.com/ernies-Organization/python-toolkit/blob/main/password_strength_checker.py)
+
+### scoring
+#### length
+- 16+ → +4  
+- 12+ → +3  
+- 8+  → +2  
+- 6+  → +1  
+
+#### character types
+- lowercase → +1  
+- uppercase → +1  
+- digits → +1  
+- symbols → +2  
+
+#### penalties
+- only letters or only digits → -2  
+- all characters identical → -3  
+- triple repeated character → -1  
+- contains: `abc`, `123`, `qwerty`, `asdf` → -2  
+
+#### rating
+- 0–2 → very weak  
+- 3–4 → weak  
+- 5–6 → medium  
+- 7–8 → strong  
+- 9+ → very strong  
+
+### example
+```python
+strength, score = check_password_strength("Example123!")
+print(strength, score)
+# Strong 7
+```
+
+---
+
