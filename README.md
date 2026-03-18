@@ -58,6 +58,20 @@ record_result(name, rounds)
 print_leaderboard()
 ```
 
+### database format
+the JSON file stores data like:
+
+```json
+[
+  {
+    "player_name": "test2",
+    "rounds": 2
+  }
+]
+```
+you don't need to manage the file manually —  
+all saving and loading is done automatically.
+
 [↑ back to top](#projects)
 ---
 
