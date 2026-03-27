@@ -2,11 +2,17 @@
 # python-toolkit
 a toolkit of useful python scripts
 
+---
+
 # important
 you are able to edit and use this in your code without consent from me  
 (as long as you are not using it for illegal/inappropriate things)
 
 this is licensed under the [MIT licence](https://github.com/ernies-Organization/python-toolkit/blob/main/LICENSE)
+
+## Disclaimer
+The content provided herein is intended strictly for educational purposes. Any misuse or abuse of this information that contradicts this purpose, including but not limited to the unauthorized distribution, reproduction, or alteration of content, or the use of information for illicit activities, is strictly prohibited and may constitute a violation of applicable laws and regulations. This could lead to serious consequences including legal action. Educational resources are to be used responsibly, ethically, and with integrity. I reserve the right to restrict access to these resources for anyone found violating these terms. I also reserve the right to change any important information without notice.
+---
 
 # projects
 below are all the projects and instructions for them
