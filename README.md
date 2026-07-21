@@ -24,6 +24,7 @@ below are all the projects and instructions for them
 - <a href="#user-database-from-file">user database from file</a>  
 - <a href="#password-generator">password generator</a>  
 - <a href="#password-strength-checker">password strength checker</a>
+- <a href="#markdown-viewer">markdown viewer</a>
 
 </details>
 
@@ -229,3 +230,38 @@ print(strength, score)
 
 ---
 
+## markdown-viewer
+this is a standalone Tkinter GUI script (`markdown_viewer.py`) that renders formatted Markdown documents using **only Python's standard library** (no external pip dependencies required).
+
+project file →  [markdown_viewer.py](https://github.com/ernies-Organization/python-toolkit/blob/main/markdown_viewer.py)
+
+### features
+- renders headings, bold/italic text, lists, quotes, and pipe tables
+- full clickable hyperlink support for external web links and local project files
+- copyable monospaced code blocks (`python`, `json`, `text`, etc.)
+- zero external dependencies (uses standard `tkinter`, `re`, `webbrowser`, `os`, `html.parser`)
+
+### how to use in your code
+You can import `CompleteMarkdownViewer` into your own Tkinter application to preview README files or local docs:
+
+```python
+import tkinter as tk
+from markdown_viewer import CompleteMarkdownViewer
+
+root = tk.Tk()
+root.title("My App Documentation")
+root.geometry("700x600")
+
+# Initialize viewer widget
+viewer = CompleteMarkdownViewer(root)
+viewer.pack(fill="both", expand=True)
+
+# Load a raw markdown string or file content
+with open("README.md", "r", encoding="utf-8") as f:
+    markdown_content = f.read()
+
+viewer.load_markdown(markdown_content, source_path="README.md")
+
+root.mainloop()
+```
+[↑ back to top](#projects)
